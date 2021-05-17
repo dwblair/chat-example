@@ -13,6 +13,19 @@ io.on('connection', (socket) => {
   });
 });
 
+
+var i = 0;
+
+setInterval(function(){ 
+
+  i=i+1;
+  console.log("hi");
+  console.log(i.toString());
+  io.emit('chat message', i.toString());
+
+},1000) //every second
+
+
 http.listen(port, () => {
   console.log(`Socket.IO server running at http://localhost:${port}/`);
 });
